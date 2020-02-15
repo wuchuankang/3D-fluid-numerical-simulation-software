@@ -1,0 +1,56 @@
+# Boundary definition
+#
+# inlet
+#---------------------------
+ 1		# number of inlets
+#ID_BID FT_Ista_Iend_Jsta_Jend_Ksta_Kend
+1	2  5	1	40    1   24    1    1
+#
+# outlet
+#---------------------------
+ 1		# number of outlets
+#ID_BID_FT_Ista_Iend_Jsta_Jend_Ksta_Kend
+1   1  6   	1   40    1   24   41   41
+#
+# wall
+#---------------------------
+ 8		# number of Walls
+#ID_BID_FT_wrot_Ista_Iend_Jsta_Jend_Ksta_Kend
+1	1	2	0   41   41    1    24   1   40
+2	2	2   0   41	 41    1	24	 1	 36
+3	3	2   0   41	 41    1	24	 1	 94
+4	1	1   1    1 	  1    1	24	 1	 40
+5	2	1   1    1 	  1    1	24	 1	 36
+6	3	1   1    1 	  1    1	24	 1	 94
+7	3	3   1    1 	 40    1	 1	21	 74
+8	3	4   1    1 	 40   25	25	21	 74
+#
+# periodic
+#---------------------------
+4		# number of Periodics 
+#ID_ori_BID1_FT1_Ista1_Iend1_Jsta1_Jend1_Ksta1_Kend1_BID2_FT2_Ista2_Iend2_Jsta2_Jend2_Ksta2_Kend2
+1   2   1    3    1    40     1     1     1    40    1    4	   1    40    25    25     1    40
+2   2   2    3    1    40     1     1     1    36    2    4	   1    40    25    25     1    36
+3   2   3    3    1    40     1     1     1    20    3    4	   1    40    25    25     1    20
+4   2   3    3    1    40     1     1     75   94    3    4	   1    40    25    25     75   94
+#
+# interior
+#--------------------------
+ 2		# number of Interiors
+#ID_ori_BID1_FT1_Ista1_Iend1_Jsta1_Jend1_Ksta1_Kend1_BID2_FT2_Ista2_Iend2_Jsta2_Jend2_Ksta2_Kend2
+1   2   3    5    1    40     1    24     1     1    2    6    1    40     1    24     37   37   
+2   2   3    6    1    40     1    24     95    95   1    5    1    40     1    24     1     1
+#
+# mixing plane
+#--------------------------
+ 0		# number of MixingPlanes
+#ID_ori_BID1_FT1_Ista1_Iend1_Jsta1_Jend1_Ksta1_Kend1_BID2_FT2_Ista2_Iend2_Jsta2_Jend2_Ksta2_Kend2
+#
+# Blocks
+#--------------------------
+3		# number of Blocks
+#BID_IM_JM_KM_Nblade_rpm
+1    41 25 41	22  -16043
+2    41 25 37	22  -16043
+3    41 25 95	22  -16043
+

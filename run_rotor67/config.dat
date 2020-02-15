@@ -1,0 +1,58 @@
+# grid file
+rotor67_20151020.dat
+#
+# boundary condition file
+BoundaryDefinition.dat
+#
+# Physics - general
+#--------------------------
+A               # axial(A) / centrifugal(C) / general(G)
+N         		# Euler(E) / Navier-Stokes(N)
+U               # uniform(U) / interpolate(I)  **use to initial
+287.06     		# Gas_Constant [J/(kg.k)]
+1.4	   			# Specific_Heat_Ratio
+0.77      		# laminar Prandtl number
+0.90      		# turbulence Prandtl number
+#
+# Physics - internal flow
+#--------------------------
+101325.0   		       # total pressure at inlet [Pa]
+288.15	   		       # total temperature at inlet [K]
+125000.0 		       # static pressure at outlet [Pa]
+1.0       		       # approximate ratio of inlet to outlet static pressure
+0.6				       # Mach number for initial
+1.0                    # reference length [m] /use to non_dimensinal
+3.0 			       # reference edd viscous ratio
+0.0 0.0 1.0		       # approximate flow angle at inlet (with x-axis) [deg]
+0.0 0.0 0.0            # approximate flow angle at outlet (with x-axis) [deg]
+Y                      # use flow mass outlet (Y=yes, N=no)
+33.8 1.0 100 0.0001    # mass imposed, relax_press, iter control to use mass imposed,  res control to use mass imposed
+#
+# Iteration control
+# -------------------------
+5000      # max. number of iterations
+700      # number of iterations on coarse grid 
+500       # number of iterations for save
+1.0E-7    # convergence tolerance
+4         # number of threads
+Y         # use multigrid method
+N         # use previous solution for restart (Y=yes, N=no)//////Note:if yes, number iterations on coarse must be ==0,because when iter=coarse iter, prolong is consvartions not delt_cv
+N         # use previous Wall Distance for restart (Y=yes, N=no)
+#
+# Numerical parameters
+# -------------------------
+6.0       # CFL-number
+1.0		  # time step coefficient
+1.0		  # relax factor in LU_SGS 
+0.05      # entropy correction coefficient
+0.6		  # k2 used for artificial Dissipation
+100.0 	  # k4 used for artificial Dissipation
+N         # use implict res smooth (Y=yes, N=no)
+Y         # limit (dens,vel, press) flow variables (Y=yes, N=no)
+L         # local(L) / global(G) time-stepping
+200		  # conservation variables(100) / primitive variables(200) / characteristic variables(300) / reconstruction variables
+100		  # none(0) / second-order-NND(100) / MUSCL2u(200) / MUSCL2c(300) / MUSCL2o(400) / MUSCL3(500) / reconstruction scheme
+200       # JST(100)/steger_warming(200)/Roe(300)/L_F(400)/Van_Leer(500)/AUSM+(600)/AUSMpw(700)/HLLC(800)/space discrete scheme
+500       # runge-kutta3(100)(recommend CFL=1.5) / rk4(200)(CFL=2.0) / rk5(300)(CFL=2.5) / rk_hybrid5(400) / LU-SGS-implicit(500) / time marching scheme 
+100		  # none(0) / BL(100) / SA(200) / SST(300) / turbulence model
+

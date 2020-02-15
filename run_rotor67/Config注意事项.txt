@@ -1,0 +1,5 @@
+在config中添加枚举类型的变量时，例如：
+A               # axial(A) / centrifugal(C) / general(G)
+A到#之间的空白，不能使用Tab键来隔开，而要用最长的space键，space键叫空格键，每次只生产一个空格，而已Tab键则是两个，而读入字符的时候，用tab键时，则是A _ _,space键时A _, 
+如果是A_ _,因为 A _ _ != "A"， 所以做判断时，if (str=="a" || str=="A")就会失效， 
+而A_ = "A",则不会出问题
